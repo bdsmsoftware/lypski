@@ -1,0 +1,60 @@
+"use client"
+import { Button } from "@/components/ui/button"
+import { Flame, Zap } from "lucide-react"
+
+export function Hero() {
+  const scrollToGallery = () => {
+    document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  return (
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-orange-500/10 via-transparent to-transparent"></div>
+      </div>
+
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <div className="mb-8">
+          <h1 className="text-6xl md:text-8xl font-bold mb-4">
+            <span className="bg-gradient-to-r from-orange-500 via-red-500 to-yellow-500 bg-clip-text text-transparent animate-pulse">
+              LYPSKI
+            </span>
+          </h1>
+          <div className="flex items-center justify-center space-x-4 mb-6">
+            <Flame className="h-8 w-8 text-orange-500 animate-bounce" />
+            <p className="text-xl md:text-2xl text-gray-300 font-light">
+              Fire Breather • Machete Juggler • Street Artist
+            </p>
+            <Zap className="h-8 w-8 text-yellow-500 animate-bounce" />
+          </div>
+        </div>
+
+        <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+          Witness the mesmerizing art of fire and steel. Where danger meets beauty, and every performance is a dance
+          with the elements.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button
+            onClick={scrollToGallery}
+            className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-3 text-lg font-semibold"
+          >
+            View Gallery
+          </Button>
+          <Button
+            variant="outline"
+            className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black px-8 py-3 text-lg font-semibold bg-transparent"
+          >
+            Book Performance
+          </Button>
+        </div>
+      </div>
+
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-orange-500 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-orange-500 rounded-full mt-2 animate-pulse"></div>
+        </div>
+      </div>
+    </section>
+  )
+}
