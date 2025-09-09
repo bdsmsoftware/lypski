@@ -36,14 +36,12 @@ export function About() {
           <div className="relative">
             <div className="aspect-square rounded-lg overflow-hidden border-2 border-orange-500/30">
               <img
-                src="/images/fire-performance.jpg"
+                src="/images/6.jpg"
                 alt="Lypski performing fire breathing"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
-              <Flame className="h-12 w-12 text-white" />
-            </div>
+
           </div>
         </div>
 

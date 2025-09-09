@@ -2,7 +2,27 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Instagram, Facebook, Youtube } from "lucide-react"
+import { Mail, Phone, MapPin, Instagram, Youtube, Music } from "lucide-react"
+
+
+const socialMedia = [
+  {
+    name: "Instagram",
+    icon: Instagram,
+    url: "https://www.instagram.com/marcin_lypski/",
+  },
+  {
+    name: "YouTube",
+    icon: Youtube,
+    url: "https://www.youtube.com/watch?v=tDMGNtE2DFg",
+  },
+  {
+    name: "TikTok",
+    icon: Music,
+    url: "https://www.tiktok.com/@marcin_lypski",
+  },
+]
+
 
 export function Contact() {
   return (
@@ -29,7 +49,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-white font-semibold">Email</p>
-                  <p className="text-gray-400">lypski.fire@gmail.com</p>
+                  <p className="text-gray-400">marcinlypski@gmail.com</p>
                 </div>
               </div>
 
@@ -38,8 +58,8 @@ export function Contact() {
                   <Phone className="h-6 w-6 text-orange-500" />
                 </div>
                 <div>
-                  <p className="text-white font-semibold">Phone</p>
-                  <p className="text-gray-400">+1 (555) 123-FIRE</p>
+                  <p className="text-white font-semibold">Phone / WhatsApp</p>
+                  <p className="text-gray-400">+48 505 202 098</p>
                 </div>
               </div>
 
@@ -49,7 +69,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-white font-semibold">Location</p>
-                  <p className="text-gray-400">Available Worldwide</p>
+                  <p className="text-gray-400">Based in Warsaw, Poland. Available Worldwide</p>
                 </div>
               </div>
             </div>
@@ -57,27 +77,19 @@ export function Contact() {
             <div>
               <h4 className="text-xl font-bold text-white mb-4">Follow the Fire</h4>
               <div className="flex space-x-4">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black bg-transparent"
-                >
-                  <Instagram className="h-5 w-5" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black bg-transparent"
-                >
-                  <Facebook className="h-5 w-5" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black bg-transparent"
-                >
-                  <Youtube className="h-5 w-5" />
-                </Button>
+                {socialMedia.map(({ name, icon: Icon, url }) => (
+                  <Button
+                    key={name}
+                    asChild
+                    variant="outline"
+                    size="icon"
+                    className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black bg-transparent"
+                  >
+                    <a href={url} target="_blank" rel="noopener noreferrer" aria-label={name}>
+                      <Icon className="h-5 w-5" />
+                    </a>
+                  </Button>
+                ))}
               </div>
             </div>
           </div>

@@ -1,26 +1,17 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Play } from "lucide-react"
 
 const videos = [
   {
-    title: "Fire Breathing Masterclass",
-    thumbnail: "/placeholder.svg?height=300&width=500",
-    duration: "3:45",
+    title: "Street Performance",
+    id: "nd3gfIAf0cg",
   },
   {
-    title: "Machete Juggling Precision",
-    thumbnail: "/placeholder.svg?height=300&width=500",
-    duration: "2:30",
+    title: "Events",
+    id: "_1u3ToeyoTM",
   },
   {
-    title: "Street Performance Highlights",
-    thumbnail: "/placeholder.svg?height=300&width=500",
-    duration: "5:20",
-  },
-  {
-    title: "Behind the Scenes",
-    thumbnail: "/placeholder.svg?height=300&width=500",
-    duration: "4:15",
+    title: "Festivals",
+    id: "oXLnmNiFeVA",
   },
 ]
 
@@ -35,30 +26,30 @@ export function Videos() {
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">Experience the intensity and artistry in motion</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 ">
           {videos.map((video, index) => (
             <Card
               key={index}
-              className="bg-gray-800/50 border-orange-500/30 hover:border-orange-500/60 transition-all duration-300 cursor-pointer group overflow-hidden"
+              className="bg-gray-800/50 border-orange-500/30 hover:border-orange-500/60 transition-all duration-300 overflow-hidden p-0"
             >
               <CardContent className="p-0">
                 <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src={video.thumbnail || "/placeholder.svg"}
-                    alt={video.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <Play className="h-8 w-8 text-white ml-1" />
+                  {video.id ? (
+                    <iframe
+                      src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0&modestbranding=1&color=white`}
+                      title={video.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-gray-900 text-gray-400">
+                      Coming soon
                     </div>
-                  </div>
-                  <div className="absolute bottom-4 right-4 bg-black/70 px-2 py-1 rounded text-white text-sm">
-                    {video.duration}
-                  </div>
+                  )}
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white group-hover:text-orange-500 transition-colors">
+                  <h3 className="text-xl font-bold text-white">
                     {video.title}
                   </h3>
                 </div>

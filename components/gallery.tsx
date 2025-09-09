@@ -13,27 +13,27 @@ const galleryImages = [
     title: "Fire Breathing Mastery",
   },
   {
-    src: "/placeholder.svg?height=600&width=400",
+    src: "/images/g1.jpg",
     alt: "Machete juggling performance",
     title: "Blade Precision",
   },
   {
-    src: "/placeholder.svg?height=600&width=400",
+    src: "/images/g3.jpg",
     alt: "Crowd watching fire performance",
     title: "Captivating Audiences",
   },
   {
-    src: "/placeholder.svg?height=600&width=400",
+    src: "/images/g2.jpg",
     alt: "Urban fire performance",
     title: "Urban Fire Art",
   },
   {
-    src: "/placeholder.svg?height=600&width=400",
+    src: "/images/g6.jpg",
     alt: "Close-up machete juggling",
     title: "Steel & Skill",
   },
   {
-    src: "/placeholder.svg?height=600&width=400",
+    src: "/images/g5.jpg",
     alt: "Fire breathing silhouette",
     title: "Dancing with Fire",
   },
@@ -58,7 +58,7 @@ export function Gallery() {
           {galleryImages.map((image, index) => (
             <Card
               key={index}
-              className="bg-gray-800/50 border-orange-500/30 hover:border-orange-500/60 transition-all duration-300 cursor-pointer group overflow-hidden"
+              className="bg-gray-800/50 border-orange-500/30 hover:border-orange-500/60 transition-all duration-300 cursor-pointer group overflow-hidden p-0"
               onClick={() => setSelectedImage(index)}
             >
               <div className="relative aspect-[4/5] overflow-hidden">
