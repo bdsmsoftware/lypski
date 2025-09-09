@@ -10,6 +10,14 @@ export function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
+      <Image
+        src="/images/hero-bg.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
+      />
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-orange-500/10 via-transparent to-transparent"></div>
       </div>
@@ -25,14 +33,16 @@ export function Hero() {
               </h1>
               <div className="flex items-center space-x-4 mb-6 justify-center md:justify-start">
                 <p className="text-xl md:text-2xl text-gray-300 font-light">
-                  Street Performer
+                  Street Performer • Actor • Improviser
                 </p>
               </div>
             </div>
 
             <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl leading-relaxed">
-              Witness the mesmerizing art of fire and steel. Where danger meets beauty, and every performance is a dance
-              with the elements.
+              Marcin Lypski is a street performer, actor, and entertainer whose shows fuse raw street energy, audacious
+              circus challenges, and craft honed through elite European film‑school training. Expect razor‑sharp precision,
+              playful improvisation, and fearless crowd work—spectacles that turn city squares into stages and audiences
+              into co‑creators.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">

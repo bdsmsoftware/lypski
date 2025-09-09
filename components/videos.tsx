@@ -23,7 +23,6 @@ export function Videos() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Videos</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">Experience the intensity and artistry in motion</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 ">

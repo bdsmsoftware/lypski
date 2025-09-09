@@ -1,5 +1,4 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Flame, Target, Users, Award } from "lucide-react"
 
 export function About() {
   return (
@@ -12,25 +11,34 @@ export function About() {
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            A master of fire and steel, bringing danger and beauty together in unforgettable performances
+            Fusing street performance, acting and improvisation.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <h3 className="text-3xl font-bold mb-6 text-white">The Art of Fire & Steel</h3>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              For over a decade, Lypski has been pushing the boundaries of street performance art. Combining the ancient
-              art of fire breathing with the precision skill of machete juggling, each performance is a carefully
-              choreographed dance between danger and beauty.
+            <h3 className="text-3xl font-bold mb-6 text-white">The touch of fire</h3>
+            <p className="text-lg">
+              Marcin is a street performer, actor, and entertainer in equal measure. His shows are a high‑voltage fusion
+              of raw street energy, audacious circus challenges, and craft refined through rigorous actor training at a
+              leading European film school.
             </p>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              From intimate street corners to grand festival stages, Lypski has captivated audiences worldwide with
-              performances that blur the line between art and adrenaline.
+            <br />
+            <p className="text-lg mt-4">
+              Rooted in improvisation theatre, he reads the crowd in real time—pivoting,
+              riffing, and reshaping each moment so no two performances are ever the same. He welcomes hecklers as
+              features, not bugs, turning sharp wit into sharper crowd work. Beneath the spontaneity sits meticulous
+              technique.
             </p>
-            <p className="text-gray-300 leading-relaxed">
-              Every flame tells a story. Every blade cuts through the ordinary to reveal the extraordinary.
+            <br />
+            <p className="text-lg mt-4">
+              Beyond the street, Marcin’s screen and voice work extend his range—he can be seen on Netflix and heard on
+              Disney+. That versatility feeds back into the street: the storytelling, timing, and presence of a trained
+              actor amplify the danger, joy, and laughter of live spectacle. Whether igniting a festival stage or
+              electrifying a corner of the city, he builds a shared experience where audience and artist create the moment
+              together. Every show is personal, playful, and unforgettable.
             </p>
+
           </div>
 
           <div className="relative">
@@ -45,36 +53,34 @@ export function About() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-6">
+        <div className="max-w-4xl mx-auto text-gray-300 leading-relaxed mb-16 space-y-6">
+
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
           <Card className="bg-gray-800/50 border-orange-500/30 hover:border-orange-500/60 transition-colors">
             <CardContent className="p-6 text-center">
-              <Flame className="h-12 w-12 text-orange-500 mx-auto mb-4" />
-              <h4 className="text-xl font-bold text-white mb-2">Fire Breathing</h4>
-              <p className="text-gray-400">Mastering the ancient art of controlled flame</p>
+              <h4 className="text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                +1000
+              </h4>
+              <p className="text-gray-400 uppercase tracking-wide">Shows</p>
             </CardContent>
           </Card>
 
           <Card className="bg-gray-800/50 border-orange-500/30 hover:border-orange-500/60 transition-colors">
             <CardContent className="p-6 text-center">
-              <Target className="h-12 w-12 text-red-500 mx-auto mb-4" />
-              <h4 className="text-xl font-bold text-white mb-2">Machete Juggling</h4>
-              <p className="text-gray-400">Precision and skill with razor-sharp blades</p>
+              <h4 className="text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                +10
+              </h4>
+              <p className="text-gray-400 uppercase tracking-wide">Years Experience</p>
             </CardContent>
           </Card>
 
           <Card className="bg-gray-800/50 border-orange-500/30 hover:border-orange-500/60 transition-colors">
             <CardContent className="p-6 text-center">
-              <Users className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
-              <h4 className="text-xl font-bold text-white mb-2">Street Performance</h4>
-              <p className="text-gray-400">Connecting with audiences in raw, authentic ways</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-gray-800/50 border-orange-500/30 hover:border-orange-500/60 transition-colors">
-            <CardContent className="p-6 text-center">
-              <Award className="h-12 w-12 text-purple-500 mx-auto mb-4" />
-              <h4 className="text-xl font-bold text-white mb-2">10+ Years</h4>
-              <p className="text-gray-400">Of professional performance experience</p>
+              <h4 className="text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                3
+              </h4>
+              <p className="text-gray-400 uppercase tracking-wide">Continents</p>
             </CardContent>
           </Card>
         </div>

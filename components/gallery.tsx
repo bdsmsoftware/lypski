@@ -49,9 +49,7 @@ export function Gallery() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Gallery</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Captured moments of fire, steel, and artistry in motion
-          </p>
+
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
