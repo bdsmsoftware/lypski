@@ -86,15 +86,19 @@ export async function sendContact(
     }
 
     const to = process.env.CONTACT_TO_EMAIL || "marcinlypski@gmail.com"
-    const from = process.env.CONTACT_FROM_EMAIL || "onboarding@resend.dev"
-    let effectiveFrom = from
-    if (!effectiveFrom.includes("@")) {
-        console.warn("[contact] invalid FROM address, falling back to default", { from })
-        effectiveFrom = "onboarding@resend.dev"
+    const from = process.env.CONTACT_FROM_EMAIL
+    if (!from || !from.includes("@") || from.toLowerCase().includes("resend.dev")) {
+        console.warn("[contact] invalid or unverified FROM. Set CONTACT_FROM_EMAIL to a verified domain address.", { from })
+        return {
+            ok: false,
+            message:
+                "Email sender not configured. Set CONTACT_FROM_EMAIL to a verified domain address (e.g. noreply@lypski.com) and restart.",
+        }
     }
-    const fromHeader = effectiveFrom.includes("<") ? effectiveFrom : `Lypski <${effectiveFrom}>`
+    const fromName = process.env.CONTACT_FROM_NAME || "Lypski"
+    const fromHeader = `${fromName} <${from}>`
     console.log("[contact] sending via Resend", {
-        from,
+        from: fromHeader,
         to,
         subject: `New inquiry from ${name} • ${eventType}`,
     })
