@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -24,7 +26,20 @@ const socialMedia = [
 ]
 
 
+import { useActionState, useEffect, useState } from "react"
+import { sendContact } from "@/app/actions/send-contact"
+
 export function Contact() {
+  const [startedAt] = useState<string>(() => String(Date.now()))
+  const [message, action, isPending] = useActionState(sendContact, undefined)
+
+  useEffect(() => {
+    if (message?.ok) {
+      const form = document.getElementById("contact-form") as HTMLFormElement | null
+      form?.reset()
+    }
+  }, [message])
+
   return (
     <section id="contact" className="py-20 bg-black">
       <div className="container mx-auto px-4">
@@ -75,7 +90,7 @@ export function Contact() {
             </div>
 
             <div>
-              <h4 className="text-xl font-bold text-white mb-4">Follow the Fire</h4>
+              <h4 className="text-xl font-bold text-white mb-4">Socials</h4>
               <div className="flex space-x-4">
                 {socialMedia.map(({ name, icon: Icon, url }) => (
                   <Button
@@ -96,11 +111,12 @@ export function Contact() {
 
           <Card className="bg-gray-800/50 border-orange-500/30">
             <CardContent className="p-8">
-              <form className="space-y-6">
+              <form id="contact-form" action={action} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-white font-semibold mb-2">Name</label>
                     <Input
+                      name="name"
                       placeholder="Your name"
                       className="bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-orange-500"
                     />
@@ -109,6 +125,7 @@ export function Contact() {
                     <label className="block text-white font-semibold mb-2">Email</label>
                     <Input
                       type="email"
+                      name="email"
                       placeholder="your@email.com"
                       className="bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-orange-500"
                     />
@@ -118,6 +135,7 @@ export function Contact() {
                 <div>
                   <label className="block text-white font-semibold mb-2">Event Type</label>
                   <Input
+                    name="eventType"
                     placeholder="Festival, Private Party, Corporate Event, etc."
                     className="bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-orange-500"
                   />
@@ -126,15 +144,29 @@ export function Contact() {
                 <div>
                   <label className="block text-white font-semibold mb-2">Message</label>
                   <Textarea
+                    name="message"
                     placeholder="Tell me about your event, date, location, and what kind of performance you're looking for..."
                     rows={5}
                     className="bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-orange-500"
                   />
                 </div>
 
-                <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold py-3">
-                  Send Message
+                {/* Honeypot + timing */}
+                <input type="text" name="company" defaultValue="" style={{ display: "none" }} aria-hidden="true" tabIndex={-1} />
+                <input type="hidden" name="startedAt" value={startedAt} />
+
+                <Button
+                  disabled={isPending}
+                  className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold py-3"
+                >
+                  {isPending ? "Sending..." : "Send Message"}
                 </Button>
+
+                {message && (
+                  <p className={`text-center text-sm ${message.ok ? "text-green-400" : "text-red-400"}`}>
+                    {message.message}
+                  </p>
+                )}
               </form>
             </CardContent>
           </Card>

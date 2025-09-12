@@ -6,9 +6,8 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Lypski - Fire Breather & Machete Juggler",
-  description: "Professional street artist specializing in fire breathing and machete juggling performances",
-    generator: 'v0.dev'
+  title: "Lypski - Comedy on Fire",
+  description: "Professional street artist specializing in fire breathing and comedy."
 }
 
 export default function RootLayout({
