@@ -75,15 +75,7 @@ export function Contact() {
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center">
-                  <Phone className="h-6 w-6 text-orange-500" />
-                </div>
-                <div>
-                  <p className="text-white font-semibold">Phone / WhatsApp</p>
-                  <p className="text-gray-400">+48 505 202 098</p>
-                </div>
-              </div>
+
 
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center">
